@@ -22,22 +22,22 @@ TextureImporter:
     second: Coin5
   - first:
       213: -5729562858867120576
-    second: SpaceInvaders_Pickups_6
+    second: S01
   - first:
       213: 6450812853603886224
-    second: SpaceInvaders_Pickups_7
+    second: S02
   - first:
       213: -8521179214825080178
-    second: SpaceInvaders_Pickups_8
+    second: Life01
   - first:
       213: 1008276216285462590
-    second: SpaceInvaders_Pickups_9
+    second: Life02
   - first:
       213: 456483208428662992
-    second: SpaceInvaders_Pickups_10
+    second: Health01
   - first:
       213: 2474071443277615101
-    second: SpaceInvaders_Pickups_11
+    second: Health02
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -273,7 +273,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpaceInvaders_Pickups_6
+      name: S01
       rect:
         serializedVersion: 2
         x: 0
@@ -294,7 +294,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpaceInvaders_Pickups_7
+      name: S02
       rect:
         serializedVersion: 2
         x: 16
@@ -315,7 +315,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpaceInvaders_Pickups_8
+      name: Life01
       rect:
         serializedVersion: 2
         x: 0
@@ -336,7 +336,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpaceInvaders_Pickups_9
+      name: Life02
       rect:
         serializedVersion: 2
         x: 16
@@ -357,7 +357,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpaceInvaders_Pickups_10
+      name: Health01
       rect:
         serializedVersion: 2
         x: 0
@@ -378,7 +378,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpaceInvaders_Pickups_11
+      name: Health02
       rect:
         serializedVersion: 2
         x: 16

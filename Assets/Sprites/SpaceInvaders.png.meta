@@ -13,7 +13,7 @@ TextureImporter:
     second: Bullet
   - first:
       213: 8841146485251879895
-    second: TopInvader
+    second: MotherShip
   - first:
       213: 7841723954438648023
     second: PlayerShip
@@ -258,7 +258,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: TopInvader
+      name: MotherShip
       rect:
         serializedVersion: 2
         x: 48
