@@ -2,23 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FriendlyBullet : MonoBehaviour
+public class DestroyAfterSeconds : MonoBehaviour
 {
+    public float seconds;
 
-    private float speed = 10f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Destroy(gameObject, seconds);
     }
 
     // Update is called once per frame
     void Update()
-    {
-        transform.Translate(Vector2.up * Time.deltaTime * speed);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
     {
         
     }
