@@ -18,7 +18,7 @@ public class AlienMaster : MonoBehaviour
     private const float moveTime = 0.005f;
     private float moveTimer = 0f;
     
-    private const float shootTime = 3f;
+    private const float shootTime = 1f;
     private float shootTimer = 0f;
     
     private float mothershipTimer = 5f;
@@ -56,6 +56,7 @@ public class AlienMaster : MonoBehaviour
 
     private void Shoot()
     {
+        if (aliens.Count <= 0) return;
         Vector2 pos = aliens[Random.Range(0, aliens.Count-1)].transform.position;
         Instantiate(bulletPrefab, pos, Quaternion.identity);
         shootTimer = shootTime;

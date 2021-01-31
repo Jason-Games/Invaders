@@ -964,6 +964,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69bf03dd058d8b846b940634b564d801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shipStats:
+    maxHealth: 3
+    currentHealth: 0
+    maxLives: 3
+    currentLives: 0
+    shipSpeed: 4
+    fireRate: 0.2
   bulletPrefab: {fileID: 5616929419101855006, guid: 282bd4096b99cd74ca4ef4728a24128a,
     type: 3}
 --- !u!1 &519420028
@@ -1671,12 +1678,12 @@ PrefabInstance:
     - target: {fileID: 3591407863710898885, guid: 5b189efea16e94d4095027989d6e5ae4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3591407863710898885, guid: 5b189efea16e94d4095027989d6e5ae4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.1480436
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 3591407863710898885, guid: 5b189efea16e94d4095027989d6e5ae4,
         type: 3}
