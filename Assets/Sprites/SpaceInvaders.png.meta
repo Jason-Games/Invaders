@@ -85,7 +85,7 @@ TextureImporter:
     second: Shield_3_L
   - first:
       213: -7863831903730625338
-    second: Shield_4_R
+    second: Shield_3_R
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -762,7 +762,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Shield_4_R
+      name: Shield_3_R
       rect:
         serializedVersion: 2
         x: 64

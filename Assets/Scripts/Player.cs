@@ -74,10 +74,13 @@ public class Player : MonoBehaviour
 
     private IEnumerator Respwan()
     {
+        // Stop dead shooting
+        isShooting = true;
         transform.position = offScreen;            
         yield return new WaitForSeconds(2);
         shipStats.currentHealth = shipStats.maxHealth;
         transform.position = startPos;
+        isShooting = false;
     }
 
     private IEnumerator Shoot()
