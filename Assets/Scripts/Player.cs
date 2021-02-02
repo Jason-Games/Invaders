@@ -86,6 +86,9 @@ public class Player : MonoBehaviour
         shipStats.currentHealth = shipStats.maxHealth;
         transform.position = startPos;
         isShooting = false;
+        UIManager.UpdateHealthBar(shipStats.currentHealth);
+        UIManager.UpdateLives(shipStats.currentLives);
+
     }
 
     private IEnumerator Shoot()

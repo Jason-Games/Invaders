@@ -142,6 +142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f71408d9e0a2d14f92194ce456486e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 10
+  scoreValue: 20
   explosion: {fileID: 3960797190996380326, guid: ddebadfaab0f0b14187df362df698b93,
     type: 3}

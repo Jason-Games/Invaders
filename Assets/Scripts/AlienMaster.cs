@@ -14,7 +14,7 @@ public class AlienMaster : MonoBehaviour
     private const float MaxLeft = -8f;
     private const float MaxRight = 8f;
     private const float MaxMoveSpeed = 0.02f;
-
+    private const float YStartMovingPos = 0.85f;
     private const float moveTime = 0.005f;
     private float moveTimer = 0f;
     
@@ -26,6 +26,8 @@ public class AlienMaster : MonoBehaviour
     private const float MothershipMax = 60f;
 
     bool movingRight;
+
+    bool entering = true;
 
     public static List<GameObject> aliens = new List<GameObject>();
 
@@ -40,18 +42,28 @@ public class AlienMaster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (moveTimer <= 0)
-            MoveEnemies();
+        if (entering)
+        {
+            transform.Translate(Vector2.down * Time.deltaTime * 10); 
+            if (transform.position.y <= YStartMovingPos)
+                entering = false;
+        }
+        else
+        { 
 
-        if (shootTimer <= 0)
-            Shoot();
+            if (moveTimer <= 0)
+                MoveEnemies();
 
-        if (mothershipTimer <= 0)
-            SpawnMothership();
+            if (shootTimer <= 0)
+                Shoot();
 
-        moveTimer -= Time.deltaTime;
-        shootTimer -= Time.deltaTime;
-        mothershipTimer -= Time.deltaTime;
+            if (mothershipTimer <= 0)
+                SpawnMothership();
+
+            moveTimer -= Time.deltaTime;
+            shootTimer -= Time.deltaTime;
+            mothershipTimer -= Time.deltaTime;
+        }
     }
 
     private void Shoot()
