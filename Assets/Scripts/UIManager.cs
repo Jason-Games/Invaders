@@ -24,8 +24,8 @@ public class UIManager : MonoBehaviour
 
     public Sprite[] healthBars;
 
-    private Color32 active = new Color32(1,1,1,1);
-    private Color32 inactive = new Color32(1,1,1,0);
+    private Color active = new Color(1,1,1,1);
+    private Color inactive = new Color(1,1,1,0.25f);
 
 
     private static UIManager instance;
@@ -59,7 +59,7 @@ public class UIManager : MonoBehaviour
     public static void UpdateScore(int score)
     {
         instance.score += score;
-        instance.scoreText.text = instance.score.ToString("000,000");
+        instance.scoreText.text = instance.score.ToString("###,###");
     }
     public static void UpdateHighScore(int highScore)
     {

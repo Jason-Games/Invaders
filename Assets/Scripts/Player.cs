@@ -23,15 +23,20 @@ public class Player : MonoBehaviour
     {
         shipStats.currentHealth = shipStats.maxHealth;
         shipStats.currentLives = shipStats.maxLives;
+
+        UIManager.UpdateHealthBar(shipStats.currentHealth);
+        UIManager.UpdateLives(shipStats.currentLives);
     }
 
     private void TakeDamage()
     {
         shipStats.currentHealth--;
+        UIManager.UpdateHealthBar(shipStats.currentHealth);
 
         if (shipStats.currentHealth <= 0)
         {
             shipStats.currentLives--;
+            UIManager.UpdateLives(shipStats.currentLives);
 
             if (shipStats.currentLives <=0 )
             {

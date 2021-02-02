@@ -1520,7 +1520,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipStats:
-    maxHealth: 1
+    maxHealth: 5
     currentHealth: 0
     maxLives: 3
     currentLives: 0
