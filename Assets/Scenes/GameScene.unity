@@ -2242,6 +2242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alientSets:
   - {fileID: 5858895981906468846, guid: a1edfcffa139e1c4584898715d0f3737, type: 3}
+  - {fileID: 6770485372657359850, guid: ab3b2f3821605f14a85d58e7c4e5578d, type: 3}
 --- !u!4 &1334187687
 Transform:
   m_ObjectHideFlags: 0

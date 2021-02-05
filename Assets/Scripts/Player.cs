@@ -28,6 +28,35 @@ public class Player : MonoBehaviour
         UIManager.UpdateLives(shipStats.currentLives);
     }
 
+
+    public void AddLife()
+    {
+        if (shipStats.currentLives == shipStats.maxLives)
+        {
+            UIManager.UpdateHighScore(1000);
+        }
+        else
+        {
+            shipStats.currentLives++;
+            UIManager.UpdateLives(shipStats.currentLives);
+        }
+
+
+    }
+
+    public void AddHealth()
+    {
+        if (shipStats.currentHealth == shipStats.maxHealth)
+        {
+            UIManager.UpdateHighScore(250);
+        }
+        else
+        {
+            shipStats.currentHealth++;
+            UIManager.UpdateHealthBar(shipStats.currentHealth);
+        }
+
+    }
     private void TakeDamage()
     {
         shipStats.currentHealth--;
