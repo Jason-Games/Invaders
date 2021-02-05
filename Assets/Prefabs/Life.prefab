@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8015330417284473719}
   - component: {fileID: 1760313423889402224}
   - component: {fileID: -306295067440670146}
+  - component: {fileID: 3062165465246482935}
+  - component: {fileID: -3737020325865096844}
   m_Layer: 0
   m_Name: Life
   m_TagString: Untagged
@@ -142,4 +144,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a0b1e2eddb4724ea6b7f4a8ca7bb18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallSpeed: 7
+  fallSpeed: 5
+--- !u!114 &3062165465246482935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560535875449972552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36d1da90fc6bcdf4a94076a5b3103f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 4
+--- !u!50 &-3737020325865096844
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1560535875449972552}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 1
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

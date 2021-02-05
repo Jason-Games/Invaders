@@ -145,3 +145,9 @@ MonoBehaviour:
   scoreValue: 160
   explosion: {fileID: 3960797190996380326, guid: ddebadfaab0f0b14187df362df698b93,
     type: 3}
+  coinPrefab: {fileID: 3100534329102990652, guid: f698381b9379a7c4598a870deb4f24fb,
+    type: 3}
+  lifePrefab: {fileID: 1560535875449972552, guid: 4a39f19539b96b5418512c9915dc6697,
+    type: 3}
+  healthPrefab: {fileID: 2543568739013831700, guid: 72571174ee6cfac428fbf5fad14cb82b,
+    type: 3}

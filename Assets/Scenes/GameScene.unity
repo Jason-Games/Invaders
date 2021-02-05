@@ -676,33 +676,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449884099}
   m_CullTransparentMesh: 0
---- !u!1 &517444453 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3591407863710898937, guid: 5b189efea16e94d4095027989d6e5ae4,
-    type: 3}
-  m_PrefabInstance: {fileID: 1104796628}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &517444458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 517444453}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69bf03dd058d8b846b940634b564d801, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shipStats:
-    maxHealth: 5
-    currentHealth: 0
-    maxLives: 3
-    currentLives: 0
-    shipSpeed: 4
-    fireRate: 0.2
-  bulletPrefab: {fileID: 5616929419101855006, guid: 282bd4096b99cd74ca4ef4728a24128a,
-    type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
