@@ -63,7 +63,13 @@ public class UIManager : MonoBehaviour
     }
     public static void UpdateHighScore(int highScore)
     {
-        // todo
+        instance.highSscore = highScore;
+        instance.highScoreText.text = instance.highSscore.ToString("000,000");
+    }
+
+    public static int GetHighScore()
+    {
+        return instance.highSscore;
     }
 
     public static void UpdateWaves()
