@@ -16,6 +16,8 @@ public class Player : MonoBehaviour
     private Vector2 startPos = new Vector2(0, -4f);
 
     private bool isShooting = false;
+
+    private bool isPaused = false;
     
 
     // Start is called before the first frame update
@@ -103,6 +105,20 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space) && !isShooting)
             StartCoroutine(Shoot());
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (!isPaused)
+            {
+                isPaused = true;
+                MenuManager.OpenPauseMenu();
+            } else
+            {
+                isPaused = false;
+                MenuManager.instance.ClosePauseMenu();
+            }
+        }
+            
 
     }
 

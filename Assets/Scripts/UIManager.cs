@@ -83,5 +83,13 @@ public class UIManager : MonoBehaviour
         instance.coinsText.text = Inventory.currentCoins.ToString();
     }
 
+    public static void ResetUI()
+    {
+        instance.score = 0;
+        instance.waves = -1;
+        UpdateScore(0);
+        UpdateWaves();
+
+    }
 
  }
