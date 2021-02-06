@@ -18,7 +18,7 @@ public class AlienMaster : MonoBehaviour
     private const float moveTime = 0.005f;
     private float moveTimer = 0f;
     
-    private const float shootTime = 1f;
+    private const float shootTime = 0.2f;
     private float shootTimer = 0f;
     
     private float mothershipTimer = 5f;

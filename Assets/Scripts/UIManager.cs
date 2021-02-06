@@ -89,6 +89,7 @@ public class UIManager : MonoBehaviour
         instance.waves = -1;
         UpdateScore(0);
         UpdateWaves();
+        
 
     }
 

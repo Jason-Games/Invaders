@@ -16,5 +16,7 @@ public class SaveObject
         this.shipStats.maxLives = 3;
         this.shipStats.shipSpeed = 4;
         this.shipStats.fireRate = 0.2f;
+        this.shipStats.currentLives = this.shipStats.maxLives;
+        this.shipStats.currentHealth = this.shipStats.maxHealth;
     }
 }

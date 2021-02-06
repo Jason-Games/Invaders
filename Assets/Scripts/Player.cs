@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
     {
         if (shipStats.currentHealth == shipStats.maxHealth)
         {
-            UIManager.UpdateHighScore(250);
+            UIManager.UpdateScore(250);
         }
         else
         {
@@ -62,7 +62,8 @@ public class Player : MonoBehaviour
     private void TakeDamage()
     {
         shipStats.currentHealth--;
-        UIManager.UpdateHealthBar(shipStats.currentHealth);
+        
+        
 
         if (shipStats.currentHealth <= 0)
         {
@@ -79,6 +80,9 @@ public class Player : MonoBehaviour
                 Debug.Log("Respwan");
                 StartCoroutine(Respwan());
             }
+        } else
+        {
+            UIManager.UpdateHealthBar(shipStats.currentHealth);
         }
     }
 
@@ -86,9 +90,7 @@ public class Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
-            Debug.Log("Dead");
             TakeDamage();
-
             Destroy(collision.gameObject);
         }
     }
@@ -142,5 +144,15 @@ public class Player : MonoBehaviour
         Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(shipStats.fireRate);
         isShooting = false;
+    }
+
+    public void Reset()
+    {
+        shipStats.currentHealth = shipStats.maxHealth;
+        shipStats.currentLives = shipStats.maxLives;
+        UIManager.UpdateHealthBar(shipStats.currentHealth);
+        UIManager.UpdateLives(shipStats.currentLives);
+
+
     }
 }

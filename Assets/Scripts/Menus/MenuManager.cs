@@ -35,13 +35,15 @@ public class MenuManager : MonoBehaviour
         instance.inGameMenu.SetActive(false);
     }
 
-    public void OpenInGameMenu()
+    public void StartNewGame()
     {
+        Time.timeScale = 1;
         instance.mainMenu.SetActive(false);
         instance.pauseMenu.SetActive(false);
         instance.gameOverMenu.SetActive(false);
         instance.inGameMenu.SetActive(true);
 
+        GameManager.SetupNewGame();
         GameManager.SpawnNewWave();
 
     }
@@ -63,7 +65,7 @@ public class MenuManager : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
-        Time.timeScale = 1
+        Time.timeScale = 1;
         instance.pauseMenu.SetActive(false);
         instance.gameOverMenu.SetActive(false);
         instance.inGameMenu.SetActive(false);

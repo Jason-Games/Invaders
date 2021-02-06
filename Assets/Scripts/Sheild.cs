@@ -9,11 +9,17 @@ public class Sheild : MonoBehaviour
     private int health;
     private SpriteRenderer sr;
 
+    private void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         health = 4;
-        sr = GetComponent<SpriteRenderer>();
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -26,16 +32,17 @@ public class Sheild : MonoBehaviour
             if (health <= 0)
             {
                 Destroy(gameObject);
+                //gameObject.SetActive(false);
             
             } 
             else
             {
                 sr.sprite = states[health - 1];
             }
-                
-                
-
 
         }
     }
+
+
+
 }

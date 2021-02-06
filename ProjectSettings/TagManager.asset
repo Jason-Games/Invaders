@@ -7,6 +7,8 @@ TagManager:
   - Alien
   - EnemyBullet
   - FriendlyBullet
+  - Shield
+  - ShieldMaster
   layers:
   - Default
   - TransparentFX
