@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7b3db3a9ed02a418ae6206c474ecf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionSfx: {fileID: 8300000, guid: dec8f4f54e839164fadddee667a27991, type: 3}
   states:
   - {fileID: -6529647560004294169, guid: adc80689202c9214bb70dc70385908bd, type: 3}
   - {fileID: -3482721200412038787, guid: adc80689202c9214bb70dc70385908bd, type: 3}
@@ -281,6 +282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b7b3db3a9ed02a418ae6206c474ecf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionSfx: {fileID: 8300000, guid: dec8f4f54e839164fadddee667a27991, type: 3}
   states:
   - {fileID: -7863831903730625338, guid: adc80689202c9214bb70dc70385908bd, type: 3}
   - {fileID: -2798431993326954908, guid: adc80689202c9214bb70dc70385908bd, type: 3}

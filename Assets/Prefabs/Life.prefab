@@ -145,6 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fallSpeed: 5
+  pickupSfx: {fileID: 8300000, guid: 8525a2e7dd0361442bbacb4f7695e00b, type: 3}
 --- !u!114 &3062165465246482935
 MonoBehaviour:
   m_ObjectHideFlags: 0

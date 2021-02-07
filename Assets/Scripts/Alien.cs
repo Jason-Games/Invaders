@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Alien : MonoBehaviour
 {
+    public AudioClip explosionSfx;
+
     public int scoreValue;
 
     public GameObject explosion;
@@ -32,6 +34,11 @@ public class Alien : MonoBehaviour
             Instantiate(coinPrefab, transform.position, Quaternion.identity);
 
         Instantiate(explosion, transform.position, Quaternion.identity);
+
+        AudioManager.PlaySoundEffect(explosionSfx);
+
+        AudioManager.UpdateBattleMusicDelay(AlienMaster.aliens.Count);
+
         if (AlienMaster.aliens.Count == 0)
             GameManager.SpawnNewWave();
 

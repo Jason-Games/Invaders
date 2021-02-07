@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45afbbb4fbea31d4ea1e73e921c97f1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alienShootSfx: {fileID: 8300000, guid: 77b71241f496822428e6eb06d5b5d64c, type: 3}
   bulletPrefab: {fileID: 238179288330683268, guid: 6fe07f344bab2ac49b79a11814e5841e,
     type: 3}
   mothershipPrefab: {fileID: 6246606123335127310, guid: 38c718922c832f8428f39b14cffbb2ce,

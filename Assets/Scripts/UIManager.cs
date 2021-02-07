@@ -60,11 +60,14 @@ public class UIManager : MonoBehaviour
     {
         instance.score += score;
         instance.scoreText.text = instance.score.ToString("###,###");
+
+        if (instance.score > instance.highSscore)
+            UpdateHighScore(instance.score);
     }
     public static void UpdateHighScore(int highScore)
     {
         instance.highSscore = highScore;
-        instance.highScoreText.text = instance.highSscore.ToString("000,000");
+        instance.highScoreText.text = instance.highSscore.ToString("###,###");
     }
 
     public static int GetHighScore()

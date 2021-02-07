@@ -5,6 +5,12 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
 
+    public GameObject explosion;
+
+    public AudioClip shootSfx;
+    public AudioClip damageSfx;
+    public AudioClip dieSfx;
+
     public ShipStats shipStats;
 
     public GameObject bulletPrefab;
@@ -82,6 +88,8 @@ public class Player : MonoBehaviour
             }
         } else
         {
+            Instantiate(explosion, transform.position, Quaternion.identity);
+            AudioManager.PlaySoundEffect(damageSfx);
             UIManager.UpdateHealthBar(shipStats.currentHealth);
         }
     }
@@ -127,6 +135,7 @@ public class Player : MonoBehaviour
     private IEnumerator Respwan()
     {
         // Stop dead shooting
+        AudioManager.PlaySoundEffect(dieSfx);
         isShooting = true;
         transform.position = offScreen;            
         yield return new WaitForSeconds(2);
@@ -141,7 +150,9 @@ public class Player : MonoBehaviour
     private IEnumerator Shoot()
     {
         isShooting = true;
+        
         Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        AudioManager.PlaySoundEffect(shootSfx);
         yield return new WaitForSeconds(shipStats.fireRate);
         isShooting = false;
     }

@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
         // Reset shields
         ResetSheilds();
         ResetProgress();
+
+        AudioManager.StopBattleMusic();
     }
 
     public static void ResetProgress()
@@ -85,14 +87,19 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SpawnWave()
     {
+        AudioManager.UpdateBattleMusicDelay(1);
+        AudioManager.StopBattleMusic();
+
         if (currentSet != null)
             Destroy(currentSet);
 
         yield return new WaitForSeconds(3);
 
+
         currentSet = Instantiate(alientSets[Random.Range(0, alientSets.Length)], spawnPos, Quaternion.identity);
 
         UIManager.UpdateWaves();
 
+        AudioManager.PlayBattleMusic();
     }
 }

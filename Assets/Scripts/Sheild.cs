@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sheild : MonoBehaviour
 {
+    public AudioClip explosionSfx;
     public Sprite[] states;
 
     private int health;
@@ -28,6 +29,8 @@ public class Sheild : MonoBehaviour
         {
             Destroy(collision.gameObject);
             health--;
+
+            AudioManager.PlaySoundEffect(explosionSfx);
 
             if (health <= 0)
             {

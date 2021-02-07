@@ -6,6 +6,8 @@ public abstract class Pickups : MonoBehaviour
 {
     public float fallSpeed;
 
+    public AudioClip pickupSfx;
+
     // Update is called once per frame
     void Update()
     {
@@ -17,7 +19,10 @@ public abstract class Pickups : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
+        {
+            AudioManager.PlaySoundEffect(pickupSfx);
             PickMeUp();
+        }
     }
 
 }

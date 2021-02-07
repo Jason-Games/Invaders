@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
+    public AudioSource mainMenuSong;
+
     public GameObject mainMenu;
     public GameObject gameOverMenu;
     public GameObject inGameMenu;
@@ -27,16 +29,19 @@ public class MenuManager : MonoBehaviour
     public void OpenMainMenu()
     {
         instance.mainMenu.SetActive(true);
+        instance.mainMenuSong.Play();
         instance.inGameMenu.SetActive(false);
     }
     public static void OpenGameOverMenu()
     {
         instance.gameOverMenu.SetActive(true);
+        
         instance.inGameMenu.SetActive(false);
     }
 
     public void StartNewGame()
     {
+        instance.mainMenuSong.Stop();
         Time.timeScale = 1;
         instance.mainMenu.SetActive(false);
         instance.pauseMenu.SetActive(false);
@@ -69,7 +74,7 @@ public class MenuManager : MonoBehaviour
         instance.pauseMenu.SetActive(false);
         instance.gameOverMenu.SetActive(false);
         instance.inGameMenu.SetActive(false);
-
+        instance.mainMenuSong.Play();
         instance.mainMenu.SetActive(true);
         GameManager.CancelGame();
     }

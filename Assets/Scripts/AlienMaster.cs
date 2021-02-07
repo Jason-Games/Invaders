@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class AlienMaster : MonoBehaviour
 {
+    public AudioClip alienShootSfx;
+
     public GameObject bulletPrefab;
     public GameObject mothershipPrefab;
 
-    private Vector3 hMove = new Vector3(0.05f,0,0);
-    private Vector3 VMove = new Vector3(0,0.25f,0);
+    private Vector3 hMove = new Vector3(0.10f,0,0);
+    private Vector3 VMove = new Vector3(0,0.35f,0);
     private Vector3 motherShipSpawnPos = new Vector3(7,3,0);
 
     private const float MaxLeft = -8f;
     private const float MaxRight = 8f;
-    private const float MaxMoveSpeed = 0.02f;
+    private const float MaxMoveSpeed = 0.018f;
     private const float YStartMovingPos = 0.85f;
     private const float moveTime = 0.005f;
     private float moveTimer = 0f;
     
-    private const float shootTime = 0.2f;
+    private const float shootTime = 0.7f;
     private float shootTimer = 0f;
     
     private float mothershipTimer = 5f;
@@ -71,6 +73,7 @@ public class AlienMaster : MonoBehaviour
         if (aliens.Count <= 0) return;
         Vector2 pos = aliens[Random.Range(0, aliens.Count-1)].transform.position;
         Instantiate(bulletPrefab, pos, Quaternion.identity);
+        AudioManager.PlaySoundEffect(alienShootSfx);
         shootTimer = shootTime;
     }
 
