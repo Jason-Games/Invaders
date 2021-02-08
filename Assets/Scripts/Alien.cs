@@ -18,6 +18,7 @@ public class Alien : MonoBehaviour
     private const int lifeChance = 1;
     private const int healthChance = 100;
 
+    private float playerYPos = -4f;
 
     public void Kill()
     {
@@ -45,4 +46,12 @@ public class Alien : MonoBehaviour
         Destroy(gameObject);
     }
 
+    private void Update()
+    {
+        if (transform.position.y <= playerYPos)
+        {
+            GameManager.CancelGame();
+            MenuManager.OpenGameOverMenu();
+        }
+    }
 }

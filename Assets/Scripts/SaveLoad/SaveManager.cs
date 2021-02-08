@@ -25,18 +25,20 @@ public class SaveManager : MonoBehaviour
     public static void SaveProgress()
     { 
         SaveObject so = new SaveObject();
-        so.coins = Inventory.currentCoins;
+        //so.coins = Inventory.currentCoins;
         so.highScore = UIManager.GetHighScore();
-        so.shipStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().shipStats;
+        //so.shipStats = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().shipStats;
+
+        SaveLoad.SaveState(so);
     }
 
     public static void LoadProgress()
     {
         SaveObject so = SaveLoad.LoadState();
-        Inventory.currentCoins = so.coins;
+        //Inventory.currentCoins = so.coins;
         UIManager.UpdateHighScore(so.highScore);
         
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().shipStats = so.shipStats;
+        //GameObject.FindGameObjectWithTag("Player").GetComponent<Player>().shipStats = so.shipStats;
 
     }
 }

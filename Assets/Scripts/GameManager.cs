@@ -10,9 +10,11 @@ public class GameManager : MonoBehaviour
     public GameObject shieldPrefab;
 
     private GameObject currentSet;
-    private Vector2 spawnPos = new Vector2(0,4.5f);
+    //private Vector2 spawnPos = new Vector2(0,4.5f);
 
     private static GameManager instance;
+
+    private int wave = 0;
 
     private void Awake()
     {
@@ -87,6 +89,14 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator SpawnWave()
     {
+        wave++;
+        if (wave > alientSets.Length)
+        {
+            CancelGame();
+            MenuManager.OpenGameOverMenu();
+            
+        }
+
         AudioManager.UpdateBattleMusicDelay(1);
         AudioManager.StopBattleMusic();
 
@@ -95,10 +105,13 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitForSeconds(3);
 
+        //var alienSet = alientSets[Random.Range(0, alientSets.Length)];
+        
+        var alienSet = alientSets[wave-1];
+        var sp = alienSet.GetComponent<AlienMaster>().spawnPos;
+        currentSet = Instantiate(alienSet, sp, Quaternion.identity);
 
-        currentSet = Instantiate(alientSets[Random.Range(0, alientSets.Length)], spawnPos, Quaternion.identity);
-
-        UIManager.UpdateWaves();
+        UIManager.UpdateWaves(wave);
 
         AudioManager.PlayBattleMusic();
     }

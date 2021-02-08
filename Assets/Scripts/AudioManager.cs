@@ -69,6 +69,12 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    public static void UpdateBattleMusicDelay(float f)
+    {
+        instance.delay = f;
+    }
+
+
     public static void UpdateBattleMusicDelay(int i)
     {
         float delayTime = i * delayTick;
@@ -79,7 +85,7 @@ public class AudioManager : MonoBehaviour
         if (delayTime > 1)
             delayTime = 1;
 
-        instance.delay = delayTime;
+       // instance.delay = delayTime;
 
     }
 

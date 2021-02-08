@@ -3098,8 +3098,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   alientSets:
   - {fileID: 5858895981906468846, guid: a1edfcffa139e1c4584898715d0f3737, type: 3}
-  - {fileID: 6770485372657359850, guid: ab3b2f3821605f14a85d58e7c4e5578d, type: 3}
-  - {fileID: 5858895981906468846, guid: f3fc8c4f15021e846a96fc55af917207, type: 3}
+  - {fileID: 5858895981906468846, guid: a47b0fdd30b5d45488e6373cbf049be0, type: 3}
+  - {fileID: 5858895981906468846, guid: a9b6b955685a24a41b7bb4d16e5287a8, type: 3}
   shieldPrefab: {fileID: 402078635616086978, guid: 5e71dd3a08122a24eaedbf268253478d,
     type: 3}
 --- !u!4 &1334187687

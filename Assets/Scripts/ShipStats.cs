@@ -7,11 +7,11 @@ public class ShipStats
 {
     [Range(1,5)]
     public int maxHealth;
-    [HideInInspector]
+    //[HideInInspector]
     public int currentHealth;
-    [HideInInspector]
+    //[HideInInspector]
     public int maxLives = 3;
-    [HideInInspector]
+    //[HideInInspector]
     public int currentLives;
 
     public float shipSpeed;

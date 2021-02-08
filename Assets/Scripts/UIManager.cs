@@ -75,9 +75,9 @@ public class UIManager : MonoBehaviour
         return instance.highSscore;
     }
 
-    public static void UpdateWaves()
+    public static void UpdateWaves(int wave)
     {
-        instance.waves++;
+        instance.waves = wave;
         instance.waveText.text = instance.waves.ToString();
 
     }
@@ -91,7 +91,7 @@ public class UIManager : MonoBehaviour
         instance.score = 0;
         instance.waves = -1;
         UpdateScore(0);
-        UpdateWaves();
+        UpdateWaves(0);
         
 
     }

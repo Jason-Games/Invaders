@@ -34,6 +34,7 @@ public class MenuManager : MonoBehaviour
     }
     public static void OpenGameOverMenu()
     {
+        Time.timeScale = 0;
         instance.gameOverMenu.SetActive(true);
         
         instance.inGameMenu.SetActive(false);

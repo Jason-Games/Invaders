@@ -9,20 +9,37 @@ public class AlienMaster : MonoBehaviour
     public GameObject bulletPrefab;
     public GameObject mothershipPrefab;
 
-    private Vector3 hMove = new Vector3(0.10f,0,0);
-    private Vector3 VMove = new Vector3(0,0.35f,0);
-    private Vector3 motherShipSpawnPos = new Vector3(7,3,0);
+    public Vector2 spawnPos;
 
+    private Vector3 motherShipSpawnPos = new Vector3(7, 3, 0);
+
+    public Vector3 hMove = new Vector3(0.10f,0,0);
+    public Vector3 VMove = new Vector3(0,0.35f,0);
+    
+
+    // Move boundaries
     private const float MaxLeft = -8f;
     private const float MaxRight = 8f;
-    private const float MaxMoveSpeed = 0.018f;
+
+    
+    // Aliens speeds
+    [Range(1,99)]
+    public int startSpeed;
+    [Range(1, 99)]
+    public int endSpeed;
+    
+    private float moveTimerPerAlien;
+    private float sSpeed;
+    private float eSpeed;
+
     private const float YStartMovingPos = 0.85f;
-    private const float moveTime = 0.005f;
-    private float moveTimer = 0f;
+    
+    private float moveTimer;
     
     private const float shootTime = 0.7f;
     private float shootTimer = 0f;
     
+    // Mothership movement
     private float mothershipTimer = 5f;
     private const float MothershipMin = 15f;
     private const float MothershipMax = 60f;
@@ -37,8 +54,16 @@ public class AlienMaster : MonoBehaviour
     void Start()
     {
         foreach(GameObject go in GameObject.FindGameObjectsWithTag("Alien"))
-               aliens.Add(go);
+            aliens.Add(go);
 
+        // Calculate move timer
+
+        sSpeed = 1 - (startSpeed / 100f);
+        eSpeed = 1 - (endSpeed / 100f);
+
+        moveTimerPerAlien = (sSpeed - eSpeed) / (float)aliens.Count;
+        
+        moveTimer = GetMoveSpeed();
     }
 
     // Update is called once per frame
@@ -110,18 +135,21 @@ public class AlienMaster : MonoBehaviour
             }
             
         }
+        
         moveTimer = GetMoveSpeed();
+        AudioManager.UpdateBattleMusicDelay(moveTimer);
+
+
     }
 
 
 
     private float GetMoveSpeed()
     {
-        float f = aliens.Count * moveTime; 
 
-        if (f < MaxMoveSpeed)
-            return MaxMoveSpeed;
-
+        float f = eSpeed + (aliens.Count * moveTimerPerAlien); 
+ 
+        Debug.Log("Timer:" + f);
         return f;
     }
 }
