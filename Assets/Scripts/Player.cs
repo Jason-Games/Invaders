@@ -162,6 +162,7 @@ public class Player : MonoBehaviour
     {
         shipStats.currentHealth = shipStats.maxHealth;
         shipStats.currentLives = shipStats.maxLives;
+        Inventory.currentCoins = 0;
         UIManager.UpdateHealthBar(shipStats.currentHealth);
         UIManager.UpdateLives(shipStats.currentLives);
 

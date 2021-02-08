@@ -12,6 +12,8 @@ public class MenuManager : MonoBehaviour
     public GameObject inGameMenu;
     public GameObject pauseMenu;
 
+    public AudioClip gameOverSfx;
+
     public TextMeshProUGUI scoreText;
 
     public static MenuManager instance;
@@ -32,21 +34,26 @@ public class MenuManager : MonoBehaviour
     public void OpenMainMenu()
     {
         instance.mainMenu.SetActive(true);
-        instance.mainMenuSong.Play();
+        //instance.mainMenuSong.Play();
+        instance.mainMenuSong.volume = 0.6f;
         instance.inGameMenu.SetActive(false);
     }
     public static void OpenGameOverMenu()
     {
+        AudioManager.PlaySoundEffect(instance.gameOverSfx);
         instance.scoreText.text = UIManager.GetScore().ToString("###,###");
         Time.timeScale = 0;
         instance.gameOverMenu.SetActive(true);
         
         instance.inGameMenu.SetActive(false);
+
+        AudioManager.PlaySoundEffect(instance.gameOverSfx);
     }
 
     public void StartNewGame()
     {
-        instance.mainMenuSong.Stop();
+        //instance.mainMenuSong.Stop();
+        instance.mainMenuSong.volume = 0.3f;
         Time.timeScale = 1;
         instance.mainMenu.SetActive(false);
         instance.pauseMenu.SetActive(false);
