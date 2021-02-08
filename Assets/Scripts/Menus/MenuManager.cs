@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class MenuManager : MonoBehaviour
     public GameObject gameOverMenu;
     public GameObject inGameMenu;
     public GameObject pauseMenu;
+
+    public TextMeshProUGUI scoreText;
 
     public static MenuManager instance;
 
@@ -34,6 +37,7 @@ public class MenuManager : MonoBehaviour
     }
     public static void OpenGameOverMenu()
     {
+        instance.scoreText.text = UIManager.GetScore().ToString("###,###");
         Time.timeScale = 0;
         instance.gameOverMenu.SetActive(true);
         

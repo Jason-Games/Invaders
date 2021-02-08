@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
 
             if (shipStats.currentLives <=0 )
             {
-                GameOver();
+                GameManager.GameOver();
             }
             else
             {
@@ -93,12 +93,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void GameOver()
-    {
-        Debug.Log("Game Over");
-        SaveManager.SaveProgress();
-        MenuManager.OpenGameOverMenu();
-    }
+  
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

@@ -84,10 +84,11 @@ MonoBehaviour:
   mothershipPrefab: {fileID: 6246606123335127310, guid: 38c718922c832f8428f39b14cffbb2ce,
     type: 3}
   spawnPos: {x: 0.03, y: -0.25}
-  hMove: {x: 0.3, y: 0, z: 0}
-  VMove: {x: 0, y: 0.6, z: 0}
-  startSpeed: 30
-  endSpeed: 61
+  hMove: {x: 1, y: 0, z: 0}
+  VMove: {x: 0, y: 0.9, z: 0}
+  startSpeed: 68
+  endSpeed: 77
+  shootTime: 0.5
 --- !u!1001 &5858895981713568911
 PrefabInstance:
   m_ObjectHideFlags: 0

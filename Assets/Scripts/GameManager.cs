@@ -34,8 +34,17 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public static void GameOver()
+    {
+        // Save high score
+        SaveManager.SaveProgress();
+        MenuManager.OpenGameOverMenu();
+        GameManager.CancelGame();
+    }
+
     public static void CancelGame()
     {
+        instance.wave = 0;
         instance.StopAllCoroutines();
 
         AlienMaster.aliens.Clear();

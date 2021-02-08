@@ -56,6 +56,11 @@ public class UIManager : MonoBehaviour
         instance.heathBar.sprite = instance.healthBars[health];
     }
 
+    public static int GetScore()
+    {
+        return instance.score;
+    }
+
     public static void UpdateScore(int score)
     {
         instance.score += score;

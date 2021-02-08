@@ -49,9 +49,8 @@ public class Alien : MonoBehaviour
     private void Update()
     {
         if (transform.position.y <= playerYPos)
-        {
-            GameManager.CancelGame();
-            MenuManager.OpenGameOverMenu();
+        {            
+           GameManager.GameOver();
         }
     }
 }
