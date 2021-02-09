@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     public GameObject[] alientSets;
     public GameObject shieldPrefab;
 
+    public AudioClip levelSpawnSfx;
+
     private GameObject currentSet;
     //private Vector2 spawnPos = new Vector2(0,4.5f);
 
@@ -91,6 +93,8 @@ public class GameManager : MonoBehaviour
 
     public static void SpawnNewWave()
     {
+        
+
         AlienMaster.aliens.Clear();
 
         instance.StartCoroutine(instance.SpawnWave());
@@ -101,9 +105,7 @@ public class GameManager : MonoBehaviour
         wave++;
         if (wave > alientSets.Length)
         {
-            CancelGame();
-            MenuManager.OpenGameOverMenu();
-            
+            GameManager.GameOver();
         }
 
         AudioManager.UpdateBattleMusicDelay(1);
@@ -112,10 +114,14 @@ public class GameManager : MonoBehaviour
         if (currentSet != null)
             Destroy(currentSet);
 
-        yield return new WaitForSeconds(3);
+        //AudioManager.PlaySoundEffect(instance.levelSpawnSfx);
+        yield return new WaitForSeconds(2);
+
+        AudioManager.PlaySoundEffect(instance.levelSpawnSfx);
+        yield return new WaitForSeconds(1);
 
         //var alienSet = alientSets[Random.Range(0, alientSets.Length)];
-        
+
         var alienSet = alientSets[wave-1];
         var sp = alienSet.GetComponent<AlienMaster>().spawnPos;
         currentSet = Instantiate(alienSet, sp, Quaternion.identity);

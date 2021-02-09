@@ -45,6 +45,8 @@ public class AudioManager : MonoBehaviour
 
         if (muted)
             AudioListener.pause = true;
+        else
+            AudioListener.pause = false;
     }
 
     public static void PlayBattleMusic()

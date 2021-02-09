@@ -16,7 +16,7 @@ public class Alien : MonoBehaviour
 
     private const int coinChance = 150;
     private const int lifeChance = 1;
-    private const int healthChance = 100;
+    private const int healthChance = 50;
 
     private float playerYPos = -4f;
 
