@@ -103,7 +103,9 @@ public class GameManager : MonoBehaviour
     private IEnumerator SpawnWave()
     {
         wave++;
-        if (wave > alientSets.Length)
+        var level = LevelManager.GetLevel(wave - 1);
+
+        if (level == null)
         {
             GameManager.GameOver();
         }
@@ -119,12 +121,27 @@ public class GameManager : MonoBehaviour
 
         AudioManager.PlaySoundEffect(instance.levelSpawnSfx);
         yield return new WaitForSeconds(1);
-
+        /*
         //var alienSet = alientSets[Random.Range(0, alientSets.Length)];
 
         var alienSet = alientSets[wave-1];
         var sp = alienSet.GetComponent<AlienMaster>().spawnPos;
+        
         currentSet = Instantiate(alienSet, sp, Quaternion.identity);
+        */
+
+        
+
+        var alienSet = alientSets[level.AlienSet-1];
+        var alienMaster = alienSet.GetComponent<AlienMaster>();
+        alienMaster.hMove = new Vector3(level.HorizontalMovement, 0f,0);
+        alienMaster.VMove = new Vector3(0f, level.VerticalMovement,0);
+        alienMaster.startSpeed = level.StartSpeed;
+        alienMaster.endSpeed = level.EndSpeed;
+        alienMaster.shootTime = level.ShootTime;
+        alienMaster.SetShootSpeed(level.ShootSpeed);
+
+        currentSet = Instantiate(alienSet, alienMaster.spawnPos, Quaternion.identity);
 
         UIManager.UpdateWaves(wave);
 

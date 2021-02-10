@@ -39,6 +39,7 @@ public class AlienMaster : MonoBehaviour
     
     public float shootTime = 0.7f;
     private float shootTimer = 0f;
+
     
     // Mothership movement
     private float mothershipTimer = 5f;
@@ -65,6 +66,12 @@ public class AlienMaster : MonoBehaviour
         moveTimerPerAlien = (sSpeed - eSpeed) / (float)aliens.Count;
         
         moveTimer = GetMoveSpeed();
+    }
+
+    public void SetShootSpeed(float shootSpeed)
+    {
+        var eb = bulletPrefab.GetComponent<EnemyBullet>();
+        eb.speed = shootSpeed;
     }
 
     // Update is called once per frame
@@ -98,9 +105,8 @@ public class AlienMaster : MonoBehaviour
     {
         if (aliens.Count <= 0) return;
 
-
-
         Vector2 pos = aliens[Random.Range(0, aliens.Count)].transform.position;
+
         Instantiate(bulletPrefab, pos, Quaternion.identity);
         AudioManager.PlaySoundEffect(alienShootSfx);
         shootTimer = GetShootTime();

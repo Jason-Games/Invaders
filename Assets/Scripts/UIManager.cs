@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-   
+
+    public TextMeshProUGUI cheatMode;
+
     public TextMeshProUGUI scoreText;
     private int score;
     
@@ -29,6 +31,17 @@ public class UIManager : MonoBehaviour
 
 
     private static UIManager instance;
+
+    public static void SetCheatMode(bool mode)
+    {
+        if (mode)
+        {
+            instance.cheatMode.gameObject.SetActive(true);
+        } else
+        {
+            instance.cheatMode.gameObject.SetActive(false);
+        }
+    }
 
     private void Awake()
     {

@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
     private bool isPaused = false;
     
+    private bool cheatMode = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -108,6 +110,21 @@ public class Player : MonoBehaviour
     void Update()
     {
         var h = Input.GetAxis("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.End))
+        { 
+            cheatMode = !cheatMode;
+            UIManager.SetCheatMode(cheatMode);
+        }
+
+        if (cheatMode && Input.GetKeyDown(KeyCode.PageDown))
+        {
+            foreach (GameObject go in GameObject.FindGameObjectsWithTag("Alien"))
+            {
+                go.GetComponent<Alien>().Kill();
+            }
+        }
+
 
         var newPlayerPos = Vector2.right * Time.deltaTime * shipStats.shipSpeed * h;
 
